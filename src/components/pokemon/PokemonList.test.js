@@ -3,11 +3,6 @@ import GraphQLContext from '../../context/graphQL/graphQLContext'
 import { render, cleanup } from '@testing-library/react'
 import PokemonList from './PokemonList'
 
-// resetting modules before each test
-// beforeEach(() => {
-//   jest.resetModules()
-// })
-
 afterEach(cleanup)
 
 function renderPokemonList(state) {
@@ -28,7 +23,7 @@ test('if loading set to true load Spinner component', () => {
 })
 
 test('if pokemons data not null generate list of pokemon items', () => {
-  const { asFragment } = renderPokemonList({
+  const { getByTestId, asFragment } = renderPokemonList({
     pokemons: [
       {
         id: 'UG9rZW1vbjowMDE=',
@@ -47,6 +42,6 @@ test('if pokemons data not null generate list of pokemon items', () => {
     ],
     loading: false
   })
-
+  expect(getByTestId('pokemon-list'))
   expect(asFragment()).toMatchSnapshot()
 })

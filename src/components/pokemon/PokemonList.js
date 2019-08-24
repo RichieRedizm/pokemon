@@ -15,7 +15,7 @@ const PokemonList = () => {
   return (
     <Fragment>
       {pokemons && (
-        <div style={listStyle}>
+        <div data-testid='pokemon-list' style={listStyle}>
           {pokemons.map(pokemon => (
             <PokemonListItem key={pokemon.id} pokemon={pokemon} />
           ))}

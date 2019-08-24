@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`if loading set to true load Spinner component 1`] = `
+<DocumentFragment>
+  <img
+    alt="loading"
+    data-testid="loading"
+    src="spinner.gif"
+    style="width: 200px; margin: auto; display: block;"
+  />
+</DocumentFragment>
+`;
+
+exports[`if pokemons data not null generate list of pokemon items 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="pokemon-list"
+    style="display: grid; grid-template-columns: repeat(5, 1fr);"
+  >
+    <div
+      class="card text-center pokemon-item-card"
+    >
+      <h3>
+        Bulbasaur
+      </h3>
+    </div>
+    <div
+      class="card text-center pokemon-item-card"
+    >
+      <h3>
+        Ivysaur
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;
