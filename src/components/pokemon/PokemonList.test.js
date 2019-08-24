@@ -1,26 +1,34 @@
 import React from 'react'
-import Adapter from 'enzyme-adapter-react-16'
-import { shallow, configure } from 'enzyme'
+import GraphQLContext from '../../context/graphQL/graphQLContext'
+import { render, cleanup } from '@testing-library/react'
 import PokemonList from './PokemonList'
-
-configure({ adapter: new Adapter() })
 
 // resetting modules before each test
 // beforeEach(() => {
 //   jest.resetModules()
 // })
 
-it('if loading set to true load Spinner component', () => {
-  const graphQLContext = {
-    pokemons: null,
+afterEach(cleanup)
+
+function renderPokemonList(state) {
+  return render(
+    <GraphQLContext.Provider value={state}>
+      <PokemonList />
+    </GraphQLContext.Provider>
+  )
+}
+test('if loading set to true load Spinner component', () => {
+  const { getByTestId, asFragment } = renderPokemonList({
+    pokemons: [],
     loading: true
-  }
-  const component = shallow(<PokemonList />, { graphQLContext })
-  expect(component.find('img.loading').exists())
+  })
+
+  expect(getByTestId('loading'))
+  expect(asFragment()).toMatchSnapshot()
 })
 
-it('if pokemons data not null generate list of pokemon items', () => {
-  const graphQLContext = {
+test('if pokemons data not null generate list of pokemon items', () => {
+  const { asFragment } = renderPokemonList({
     pokemons: [
       {
         id: 'UG9rZW1vbjowMDE=',
@@ -38,7 +46,7 @@ it('if pokemons data not null generate list of pokemon items', () => {
       }
     ],
     loading: false
-  }
-  const component = shallow(<PokemonList />, { graphQLContext })
-  expect(component.find('.pokemon-item-card').exists())
+  })
+
+  expect(asFragment()).toMatchSnapshot()
 })

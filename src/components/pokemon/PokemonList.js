@@ -1,4 +1,5 @@
 import React, { Fragment, useContext } from 'react'
+import PropTypes from 'prop-types'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import PokemonListItem from './PokemonListItem'
 import Spinner from '../search/Spinner'
@@ -28,6 +29,11 @@ const listStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(5, 1fr)',
   gridGap: '1rem'
+}
+
+PokemonList.contextTypes = {
+  pokemons: PropTypes.array,
+  loading: PropTypes.bool
 }
 
 export default PokemonList
