@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const PokemonListItem = ({ pokemon: { name } }) => {
   return (
-    <div className='card text-center'>
+    <div className='card text-center pokemon-item-card'>
       {/* <img
         src={avatar_url}
         alt='profile'

@@ -7,9 +7,8 @@ import { gql } from 'apollo-boost'
 
 const GraphQLState = props => {
   const initialState = {
-    users: [],
-    user: {},
-    repos: [],
+    pokemons: [],
+    pokemon: [],
     loading: false
   }
   const [state, dispatch] = useReducer(GraphQLReducer, initialState)
@@ -17,7 +16,8 @@ const GraphQLState = props => {
   // load all pokemons
   const client = new ApolloClient({
     uri: 'https://graphql-pokemon.now.sh'
-  })
+	})
+
   useEffect(() => {
     setLoading()
     client
@@ -39,7 +39,9 @@ const GraphQLState = props => {
           payload: result.data.pokemons
         })
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   // set loading
   const setLoading = () => dispatch({ type: SET_LOADING })
 

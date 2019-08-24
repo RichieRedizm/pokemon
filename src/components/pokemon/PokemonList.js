@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Fragment, useContext } from 'react'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import PokemonListItem from './PokemonListItem'
 import Spinner from '../search/Spinner'
@@ -12,7 +12,7 @@ const PokemonList = () => {
   }
 
   return (
-    <div className='card text-center'>
+    <Fragment>
       {pokemons && (
         <div style={listStyle}>
           {pokemons.map(pokemon => (
@@ -20,7 +20,7 @@ const PokemonList = () => {
           ))}
         </div>
       )}
-    </div>
+    </Fragment>
   )
 }
 
