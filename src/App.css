@@ -7,6 +7,8 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --dark-label-color: #234c61d6;
+  --light-label-color: #4b7b94ba;
 }
 
 * {
@@ -98,6 +100,14 @@ img {
   text-align: left;
 }
 
+.label-dark {
+  color: var(--dark-label-color);
+}
+
+.label-light {
+  color: var(--light-label-color);
+}
+
 /* Center All */
 .all-center {
   display: flex;
@@ -116,14 +126,36 @@ img {
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
 }
-
+.card .detail {
+  background-color: rgba(17, 98, 130, 0.1);
+  padding: 10px;
+}
 .meta {
   height: 100px;
 }
 
 /* Detail */
+.detail-wrap {
+  display: flex;
+}
+
+.detail span {
+  padding: 0 4px;
+  font-size: 0.9em;
+}
+
+.detail-meta {
+  width: 20%;
+}
+
 .detail-image {
-  width: 30vh;
+  width: 60%;
+}
+.detail-image img {
+  display: block;
+  width: 40vw;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 /* List */
