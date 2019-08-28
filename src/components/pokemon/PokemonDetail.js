@@ -54,8 +54,8 @@ const PokemonDetail = ({ match }) => {
 
   return (
     <Fragment>
-      <Link to={`/`} className='btn btn-light btn-sm my-1'>
-        go back to search
+      <Link to={`/`} className='btn btn-light btn-sm'>
+        go back to list
       </Link>
       <div className='detail-wrap'>
         <div className='detail-meta'>
@@ -66,8 +66,8 @@ const PokemonDetail = ({ match }) => {
           <img src={image} alt={name} />
         </div>
       </div>
-      <div className='card grid-2'>
-        <div className='detail'>
+      <div className='grid-2'>
+        <div className='card detail'>
           {types && <strong className='label-dark'>Type:</strong>}
           {types && formatArrayList(types)}
           {resistant && <strong className='label-dark'>Resistant: </strong>}
@@ -75,7 +75,7 @@ const PokemonDetail = ({ match }) => {
           {weaknesses && <strong className='label-dark'>weaknesses: </strong>}
           {weaknesses && formatArrayList(weaknesses)}
         </div>
-        <div className='detail'>
+        <div className='card detail'>
           {attacks.fast && (
             <strong className='label-dark'>Fast Attacks: </strong>
           )}

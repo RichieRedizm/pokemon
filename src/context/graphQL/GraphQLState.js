@@ -24,7 +24,7 @@ const GraphQLState = props => {
       .query({
         query: gql`
           {
-            pokemons(first: 10) {
+            pokemons(first: 151) {
               id
               number
               name
