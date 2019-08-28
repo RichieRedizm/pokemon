@@ -42,6 +42,16 @@ test('if pokemons data not null generate list of pokemon items', () => {
     ],
     loading: false
   })
-  expect(getByTestId('pokemon-list'))
+  const pokemonList = getByTestId('pokemon-list')
+  expect(pokemonList)
+  expect(pokemonList.children.length).toBe(2)
   expect(asFragment()).toMatchSnapshot()
+})
+
+test('if pokemons array empty dont display any list items', () => {
+  const { queryByTestId } = renderPokemonList({
+    pokemons: null,
+    loading: false
+  })
+  expect(queryByTestId('pokemon-list')).toBeNull()
 })

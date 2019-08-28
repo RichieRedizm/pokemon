@@ -3,18 +3,17 @@ import PropTypes from 'prop-types'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import PokemonListItem from './PokemonListItem'
 import Spinner from '../search/Spinner'
+import isEmpty from 'lodash/isEmpty'
 
 const PokemonList = () => {
   const graphQLContext = useContext(GraphQLContext)
   const { loading, pokemons } = graphQLContext
 
-  if (loading) {
-    return <Spinner />
-  }
+  if (loading) return <Spinner />
 
   return (
     <Fragment>
-      {pokemons && (
+      {!isEmpty(pokemons) && (
         <div data-testid='pokemon-list' style={listStyle}>
           {pokemons.map(pokemon => (
             <PokemonListItem key={pokemon.id} pokemon={pokemon} />
