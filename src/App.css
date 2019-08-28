@@ -121,6 +121,11 @@ img {
   height: 100px;
 }
 
+/* Detail */
+.detail-image {
+  width: 30vh;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;

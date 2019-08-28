@@ -14,14 +14,42 @@ const PokemonDetail = ({ match }) => {
 
   if (loading || pokemon === null) return <Spinner />
 
-  // console.log('pokemon', pokemon)
-  const { name } = pokemon
+  const formatArrayList = list => {
+    return (
+      <div className='detail-list'>
+        {list.map(item => (
+          <span key={item}>{item}</span>
+        ))}
+      </div>
+    )
+  }
+
+  const { name, image, classification, types, resistant, weaknesses } = pokemon
   return (
     <Fragment>
       <Link to={`/`} className='btn btn-light btn-sm my-1'>
         go back to search
       </Link>
-      {name && <div>{name}</div>}
+
+      {name && <h2>{name}</h2>}
+      {classification && <strong>{classification}</strong>}
+      <div className='detail-image'>
+        <img src={image} alt={name} />
+      </div>
+      <div className='card grid-2'>
+        <div>
+          {types && <strong>Type:</strong>}
+          {types && formatArrayList(types)}
+          {resistant && <strong>Resistant: </strong>}
+          {resistant && formatArrayList(resistant)}
+          {weaknesses && <strong>weaknesses: </strong>}
+          {weaknesses && formatArrayList(weaknesses)}
+        </div>
+        <div>
+          {weaknesses && <strong>weaknesses: </strong>}
+          {weaknesses && formatArrayList(weaknesses)}
+        </div>
+      </div>
     </Fragment>
   )
 }
