@@ -1,26 +1,26 @@
-import React, { useContext } from 'react'
+import React, { Fragment, useContext } from 'react'
+import PropTypes from 'prop-types'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import PokemonListItem from './PokemonListItem'
 import Spinner from '../search/Spinner'
+import isEmpty from 'lodash/isEmpty'
 
 const PokemonList = () => {
   const graphQLContext = useContext(GraphQLContext)
   const { loading, pokemons } = graphQLContext
 
-  if (loading) {
-    return <Spinner />
-  }
+  if (loading) return <Spinner />
 
   return (
-    <div className='card text-center'>
-      {pokemons && (
-        <div style={listStyle}>
+    <Fragment>
+      {!isEmpty(pokemons) && (
+        <div data-testid='pokemon-list' style={listStyle}>
           {pokemons.map(pokemon => (
             <PokemonListItem key={pokemon.id} pokemon={pokemon} />
           ))}
         </div>
       )}
-    </div>
+    </Fragment>
   )
 }
 
@@ -28,6 +28,11 @@ const listStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(5, 1fr)',
   gridGap: '1rem'
+}
+
+PokemonList.contextTypes = {
+  pokemons: PropTypes.array,
+  loading: PropTypes.bool
 }
 
 export default PokemonList

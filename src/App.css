@@ -111,9 +111,14 @@ img {
 
 /* Cards */
 .card {
+  position: relative;
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+}
+
+.meta {
+  height: 100px;
 }
 
 /* List */

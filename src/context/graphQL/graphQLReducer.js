@@ -3,7 +3,6 @@ import { GET_POKEMONS, GET_POKEMON_DETAILS, SET_LOADING } from '../types'
 export default (state, action) => {
   switch (action.type) {
     case GET_POKEMONS:
-      console.log('graphQL Reducer action', action)
       return {
         ...state,
         pokemons: action.payload,
