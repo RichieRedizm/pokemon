@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import { render, cleanup } from '@testing-library/react'
 import PokemonList from './PokemonList'
@@ -8,7 +9,9 @@ afterEach(cleanup)
 function renderPokemonList(state) {
   return render(
     <GraphQLContext.Provider value={state}>
-      <PokemonList />
+      <Router>
+        <PokemonList />
+      </Router>
     </GraphQLContext.Provider>
   )
 }

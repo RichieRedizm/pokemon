@@ -34,7 +34,7 @@ const PokemonDetail = ({ match }) => {
       <Link to={`/`} className='btn btn-light btn-sm'>
         Back to Pokemon list
       </Link>
-      <div className='detail-wrap'>
+      <div className='detail-wrap' data-testid='pokemon-detail'>
         <div className='detail-meta'>
           {name && <h2>{name}</h2>}
           {classification && <h3 className='label-dark'>{classification}</h3>}

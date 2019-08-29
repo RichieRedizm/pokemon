@@ -3,7 +3,7 @@ const { formatObjectList } = require('../helper')
 
 const PokemonAttacks = ({ attacks }) => {
   return (
-    <div className='card detail'>
+    <div data-testid='pokemon-attacks' className='card detail'>
       {attacks && <h3 className='label-dark'>Attacks</h3>}
       {attacks.fast && (
         <div>

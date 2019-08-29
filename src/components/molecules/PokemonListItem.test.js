@@ -1,8 +1,7 @@
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import PokemonListItem from './PokemonListItem'
-
-afterEach(cleanup)
 
 test('it displays a pokemon list item', () => {
   const pokemon = {
@@ -13,7 +12,9 @@ test('it displays a pokemon list item', () => {
     __typename: 'Pokemon'
   }
   const { getByTestId, asFragment } = render(
-    <PokemonListItem pokemon={pokemon} />
+    <Router>
+      <PokemonListItem pokemon={pokemon} />
+    </Router>
   )
 
   expect(getByTestId('pokemon-item-card'))
