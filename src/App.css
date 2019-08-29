@@ -9,6 +9,7 @@
   --success-color: #28a745;
   --dark-label-color: #234c61d6;
   --light-label-color: #4b7b94ba;
+  --transparent-primary-color: rgba(10, 71, 95, 0.2);
 }
 
 * {
@@ -70,11 +71,14 @@ img {
 .card {
   position: relative;
   padding: 1rem 1rem 2rem;
-  background-color: rgba(10, 71, 95, 0.2);
+  background-color: var(--transparent-primary-color);
   margin: 0.7rem 0;
   border-radius: 8px;
 }
-
+.card.list-item {
+  background: transparent;
+  border: 8px var(--transparent-primary-color) dashed;
+}
 .meta {
   height: 100px;
 }
