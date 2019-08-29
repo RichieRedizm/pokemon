@@ -2,11 +2,8 @@ import React, { Fragment, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import Spinner from '../search/Spinner'
-const {
-  formatArrayList,
-  formatMinMaxList,
-  formatObjectList
-} = require('../helper')
+import Attacks from '../molecules/PokemonAttacks'
+const { formatArrayList, formatMinMaxList } = require('../helper')
 
 const PokemonDetail = ({ match }) => {
   const graphQLContext = useContext(GraphQLContext)
@@ -31,6 +28,7 @@ const PokemonDetail = ({ match }) => {
     attacks
   } = pokemon
 
+  // TODO: very bloated - need to split into atoms
   return (
     <Fragment>
       <Link to={`/`} className='btn btn-light btn-sm'>
@@ -47,7 +45,7 @@ const PokemonDetail = ({ match }) => {
       </div>
       <div className='grid-2'>
         <div className='card detail'>
-          <h3 className='label-dark'>Stats</h3>
+          <h3 className='label-dark'>Statistics</h3>
           {types && (
             <div>
               <strong className='label-dark'>Type: </strong>
@@ -79,21 +77,7 @@ const PokemonDetail = ({ match }) => {
             </div>
           )}
         </div>
-        <div className='card detail'>
-          {attacks && <h3 className='label-dark'>Attacks</h3>}
-          {attacks.fast && (
-            <div>
-              <strong className='label-dark'>Fast Attacks: </strong>
-              {formatObjectList(attacks.fast)}
-            </div>
-          )}
-          {attacks.special && (
-            <div>
-              <strong className='label-dark'>Special Attacks: </strong>
-              {formatObjectList(attacks.special)}
-            </div>
-          )}
-        </div>
+        {attacks && <Attacks attacks={attacks} />}
       </div>
     </Fragment>
   )
