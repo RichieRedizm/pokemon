@@ -47,26 +47,52 @@ const PokemonDetail = ({ match }) => {
       </div>
       <div className='grid-2'>
         <div className='card detail'>
-          {types && <strong className='label-dark'>Type:</strong>}
-          {types && formatArrayList(types)}
-          {weight && <strong className='label-dark'>Weight:</strong>}
-          {weight && formatMinMaxList(weight)}
-          {height && <strong className='label-dark'>Weight:</strong>}
-          {height && formatMinMaxList(height)}
-          {resistant && <strong className='label-dark'>Resistant: </strong>}
-          {resistant && formatArrayList(resistant)}
-          {weaknesses && <strong className='label-dark'>weaknesses: </strong>}
-          {weaknesses && formatArrayList(weaknesses)}
+          <h3 className='label-dark'>Stats</h3>
+          {types && (
+            <div>
+              <strong className='label-dark'>Type: </strong>
+              {formatArrayList(types)}
+            </div>
+          )}
+          {weight && (
+            <div>
+              <strong className='label-dark'>Weight: </strong>
+              {formatMinMaxList(weight)}
+            </div>
+          )}
+          {height && (
+            <div>
+              <strong className='label-dark'>Height: </strong>
+              {formatMinMaxList(height)}
+            </div>
+          )}
+          {resistant && (
+            <div>
+              <strong className='label-dark'>Resistant: </strong>
+              {formatArrayList(resistant)}
+            </div>
+          )}
+          {weaknesses && (
+            <div>
+              <strong className='label-dark'>weaknesses: </strong>
+              {formatArrayList(weaknesses)}
+            </div>
+          )}
         </div>
         <div className='card detail'>
+          {attacks && <h3 className='label-dark'>Attacks</h3>}
           {attacks.fast && (
-            <strong className='label-dark'>Fast Attacks: </strong>
+            <div>
+              <strong className='label-dark'>Fast Attacks: </strong>
+              {formatObjectList(attacks.fast)}
+            </div>
           )}
-          {attacks.fast && formatObjectList(attacks.fast)}
           {attacks.special && (
-            <strong className='label-dark'>Special Attacks: </strong>
+            <div>
+              <strong className='label-dark'>Special Attacks: </strong>
+              {formatObjectList(attacks.special)}
+            </div>
           )}
-          {attacks.special && formatObjectList(attacks.special)}
         </div>
       </div>
     </Fragment>
