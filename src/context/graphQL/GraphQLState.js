@@ -50,7 +50,6 @@ const GraphQLState = props => {
         query: gql`
           {
             pokemon(id: "${id}", name: "${name}") {
-              id
               number
               name
               weight {
@@ -77,17 +76,7 @@ const GraphQLState = props => {
                   damage
                 }
               }
-              fleeRate
-              maxCP
-              evolutions {
-                id
-              }
-              evolutionRequirements {
-                amount
-                name
-              }
-              maxHP
-              image
+            	image
             }
           }
         `

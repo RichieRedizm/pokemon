@@ -3,7 +3,7 @@
 /* Global Styles */
 :root {
   --primary-color: #dc3545;
-  --dark-color: #333333;
+  --dark-color: #234c61d6;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -31,7 +31,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: var(--light-color);
 }
 
 ul {
@@ -57,7 +57,9 @@ img {
 
 /* Label Styles*/
 .label-dark {
+  display: block;
   color: var(--dark-label-color);
+  margin-top: 6px;
 }
 
 .label-light {
@@ -67,14 +69,23 @@ img {
 /* Cards */
 .card {
   position: relative;
-  padding: 1rem;
-  background-color: rgba(17, 98, 130, 0.1);
+  padding: 1rem 1rem 2rem;
+  background-color: rgba(10, 71, 95, 0.2);
   margin: 0.7rem 0;
   border-radius: 8px;
 }
 
 .meta {
   height: 100px;
+}
+
+.number {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding-bottom: 10px;
 }
 
 /* Detail */
@@ -162,8 +173,11 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
-  color: #333;
+  background: #ccc;
+  background-color: rgba(10, 71, 95, 0.2);
+}
+.btn-light:hover {
+  color: var(--dark-color);
 }
 
 .btn-dark,
@@ -172,6 +186,10 @@ img {
 .alert-dark {
   background: var(--dark-color);
   color: #fff;
+}
+
+.btn-dark:hover {
+  color: var(--light-color);
 }
 
 .btn:hover {

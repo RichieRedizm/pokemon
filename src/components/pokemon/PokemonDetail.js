@@ -2,7 +2,11 @@ import React, { Fragment, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import Spinner from '../search/Spinner'
-const { formatArrayList, formatObjectList } = require('../helper')
+const {
+  formatArrayList,
+  formatMinMaxList,
+  formatObjectList
+} = require('../helper')
 
 const PokemonDetail = ({ match }) => {
   const graphQLContext = useContext(GraphQLContext)
@@ -20,6 +24,8 @@ const PokemonDetail = ({ match }) => {
     image,
     classification,
     types,
+    weight,
+    height,
     resistant,
     weaknesses,
     attacks
@@ -28,7 +34,7 @@ const PokemonDetail = ({ match }) => {
   return (
     <Fragment>
       <Link to={`/`} className='btn btn-light btn-sm'>
-        go back to list
+        Back to Pokemon list
       </Link>
       <div className='detail-wrap'>
         <div className='detail-meta'>
@@ -43,6 +49,10 @@ const PokemonDetail = ({ match }) => {
         <div className='card detail'>
           {types && <strong className='label-dark'>Type:</strong>}
           {types && formatArrayList(types)}
+          {weight && <strong className='label-dark'>Weight:</strong>}
+          {weight && formatMinMaxList(weight)}
+          {height && <strong className='label-dark'>Weight:</strong>}
+          {height && formatMinMaxList(height)}
           {resistant && <strong className='label-dark'>Resistant: </strong>}
           {resistant && formatArrayList(resistant)}
           {weaknesses && <strong className='label-dark'>weaknesses: </strong>}
