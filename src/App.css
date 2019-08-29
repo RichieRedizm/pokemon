@@ -107,7 +107,7 @@ img {
 }
 
 .detail-image {
-  width: 50%;
+  width: 70%;
 }
 
 .detail-image img {
@@ -207,6 +207,9 @@ img {
 
 /* larger screen Styles */
 @media (min-width: 700px) {
+  .detail-image {
+    width: 40%;
+  }
   .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
