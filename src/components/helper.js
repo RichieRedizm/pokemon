@@ -1,19 +1,37 @@
 import React from 'react'
 
 export const formatArrayList = list => {
+  const lastItem = list.length - 1
   return (
     <div className='detail-list'>
-      {list.map(item => (
-        <span key={item}>{item} /</span>
+      {list.map((item, index) => (
+        <span key={`detail-list-${index}`}>
+          {item}
+          {lastItem !== index ? ' /' : ''}
+        </span>
       ))}
     </div>
   )
 }
+
+export const formatMinMaxList = object => {
+  return (
+    <div className='detail-object-list'>
+      <span>
+        <strong className='label-light'>Maximum:</strong> {object.maximum}
+      </span>
+      <span>
+        <strong className='label-light'>Minimum:</strong> {object.minimum}
+      </span>
+    </div>
+  )
+}
+
 export const formatObjectList = object => {
   return object.map((obj, index) => {
     const { name, type, damage } = obj
     return (
-      <div key={index} className='detail-object-list'>
+      <div key={`detail-object-list-${index}`} className='detail-object-list'>
         <span>
           <strong className='label-light'>Name:</strong> {name}
         </span>
