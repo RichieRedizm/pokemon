@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import PropTypes from 'prop-types'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
-import PokemonListItem from './PokemonListItem'
+import PokemonListItem from '../molecules/PokemonListItem'
 import Spinner from '../search/Spinner'
 import isEmpty from 'lodash/isEmpty'
 

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it displays a pokemon list item 1`] = `
+<DocumentFragment>
+  <div
+    class="card text-center"
+    data-testid="pokemon-item-card"
+  >
+    <h3>
+      Bulbasaur
+    </h3>
+    <a
+      href="/pokemon/UG9rZW1vbjowMDE=/Bulbasaur"
+    >
+      <button
+        class="btn btn-dark btn-sm"
+      >
+        stats
+      </button>
+      <img
+        alt="pokemon"
+        src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
+      />
+    </a>
+    <strong
+      class="number"
+    >
+      001
+    </strong>
+  </div>
+</DocumentFragment>
+`;

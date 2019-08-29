@@ -201,7 +201,7 @@ img {
   border: #ccc solid 1px;
 }
 
-/* Mobile Styles */
+/* larger screen Styles */
 @media (min-width: 700px) {
   .grid-2 {
     display: grid;

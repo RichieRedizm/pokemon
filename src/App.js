@@ -3,8 +3,8 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import GraphQLState from './context/graphQL/GraphQLState'
 import NotFound from './components/search/NotFound'
-import PokemonList from './components/pokemon/PokemonList'
-import PokemonDetail from './components/pokemon/PokemonDetail'
+import PokemonList from './components/organisms/PokemonList'
+import PokemonDetail from './components/organisms/PokemonDetail'
 
 function App() {
   return (

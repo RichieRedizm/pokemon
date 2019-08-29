@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const PokemonListItem = ({ pokemon: { id, name, image, number } }) => {
   return (
-    <div className='card text-center pokemon-item-card'>
+    <div data-testid='pokemon-item-card' className='card text-center'>
       <h3>{name}</h3>
       <Link to={`/pokemon/${id}/${name}`}>
         <button className='btn btn-dark btn-sm'>stats</button>

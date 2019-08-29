@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`if loading set to true load Spinner component 1`] = `
+<DocumentFragment>
+  <img
+    alt="loading"
+    data-testid="loading"
+    src="spinner.gif"
+    style="width: 200px; margin: auto; display: block;"
+  />
+</DocumentFragment>
+`;
+
+exports[`if pokemons data not null generate list of pokemon items 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="pokemon-list"
+    style="display: grid; grid-template-columns: repeat(5, 1fr);"
+  >
+    <div
+      class="card text-center"
+      data-testid="pokemon-item-card"
+    >
+      <h3>
+        Bulbasaur
+      </h3>
+      <a
+        href="/pokemon/UG9rZW1vbjowMDE=/Bulbasaur"
+      >
+        <button
+          class="btn btn-dark btn-sm"
+        >
+          stats
+        </button>
+        <img
+          alt="pokemon"
+          src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
+        />
+      </a>
+      <strong
+        class="number"
+      >
+        001
+      </strong>
+    </div>
+    <div
+      class="card text-center"
+      data-testid="pokemon-item-card"
+    >
+      <h3>
+        Ivysaur
+      </h3>
+      <a
+        href="/pokemon/UG9rZW1vbjowMDI=/Ivysaur"
+      >
+        <button
+          class="btn btn-dark btn-sm"
+        >
+          stats
+        </button>
+        <img
+          alt="pokemon"
+          src="https://img.pokemondb.net/artwork/ivysaur.jpg"
+        />
+      </a>
+      <strong
+        class="number"
+      >
+        002
+      </strong>
+    </div>
+  </div>
+</DocumentFragment>
+`;
