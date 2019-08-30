@@ -14,7 +14,7 @@ const PokemonList = () => {
   return (
     <Fragment>
       {!isEmpty(pokemons) && (
-        <div data-testid='pokemon-list' style={listStyle}>
+        <div data-testid='pokemon-list' className='grid-245'>
           {pokemons.map(pokemon => (
             <PokemonListItem key={pokemon.id} pokemon={pokemon} />
           ))}
@@ -22,12 +22,6 @@ const PokemonList = () => {
       )}
     </Fragment>
   )
-}
-
-const listStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(5, 1fr)',
-  gridGap: '1rem'
 }
 
 PokemonList.contextTypes = {

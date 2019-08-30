@@ -52,14 +52,6 @@ const GraphQLState = props => {
             pokemon(id: "${id}", name: "${name}") {
               number
               name
-              weight {
-                minimum
-                maximum
-              }
-              height {
-                minimum
-                maximum
-              }
               classification
               types
               resistant

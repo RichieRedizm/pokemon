@@ -14,19 +14,6 @@ export const formatArrayList = list => {
   )
 }
 
-export const formatMinMaxList = object => {
-  return (
-    <div className='detail-object-list'>
-      <span>
-        <strong className='label-light'>Maximum:</strong> {object.maximum}
-      </span>
-      <span>
-        <strong className='label-light'>Minimum:</strong> {object.minimum}
-      </span>
-    </div>
-  )
-}
-
 export const formatObjectList = object => {
   return object.map((obj, index) => {
     const { name, type, damage } = obj
