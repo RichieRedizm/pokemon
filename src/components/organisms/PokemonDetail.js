@@ -23,14 +23,12 @@ const PokemonDetail = ({ match }) => {
     image,
     classification,
     types,
-    weight,
-    height,
     resistant,
     weaknesses,
     attacks
   } = pokemon
 
-  // TODO: very bloated - need to split into atoms
+  // TODO: very bloated - need to split into molecules & atoms
   return (
     <Fragment>
       <Link to={`/`} className='btn btn-light btn-sm'>
