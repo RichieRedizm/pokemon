@@ -14,11 +14,11 @@ exports[`if loading set to true load Spinner component 1`] = `
 exports[`if pokemons data not null generate list of pokemon items 1`] = `
 <DocumentFragment>
   <div
+    class="grid-245"
     data-testid="pokemon-list"
-    style="display: grid; grid-template-columns: repeat(5, 1fr);"
   >
     <div
-      class="card text-center"
+      class="card list-item text-center"
       data-testid="pokemon-item-card"
     >
       <h3>
@@ -32,10 +32,14 @@ exports[`if pokemons data not null generate list of pokemon items 1`] = `
         >
           stats
         </button>
-        <img
-          alt="pokemon"
-          src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
-        />
+        <div
+          class="image-wrap"
+        >
+          <img
+            alt="pokemon"
+            src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
+          />
+        </div>
       </a>
       <strong
         class="number"
@@ -44,7 +48,7 @@ exports[`if pokemons data not null generate list of pokemon items 1`] = `
       </strong>
     </div>
     <div
-      class="card text-center"
+      class="card list-item text-center"
       data-testid="pokemon-item-card"
     >
       <h3>
@@ -58,10 +62,14 @@ exports[`if pokemons data not null generate list of pokemon items 1`] = `
         >
           stats
         </button>
-        <img
-          alt="pokemon"
-          src="https://img.pokemondb.net/artwork/ivysaur.jpg"
-        />
+        <div
+          class="image-wrap"
+        >
+          <img
+            alt="pokemon"
+            src="https://img.pokemondb.net/artwork/ivysaur.jpg"
+          />
+        </div>
       </a>
       <strong
         class="number"

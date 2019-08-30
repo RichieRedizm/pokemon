@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import GraphQLContext from '../../context/graphQL/graphQLContext'
 import Spinner from '../search/Spinner'
 import Attacks from '../molecules/PokemonAttacks'
-const { formatArrayList, formatMinMaxList } = require('../helper')
+
+const { formatArrayList } = require('../helper')
 
 const PokemonDetail = ({ match }) => {
   const graphQLContext = useContext(GraphQLContext)
@@ -18,17 +19,16 @@ const PokemonDetail = ({ match }) => {
 
   const {
     name,
+    number,
     image,
     classification,
     types,
-    weight,
-    height,
     resistant,
     weaknesses,
     attacks
   } = pokemon
 
-  // TODO: very bloated - need to split into atoms
+  // TODO: very bloated - need to split into molecules & atoms
   return (
     <Fragment>
       <Link to={`/`} className='btn btn-light btn-sm'>
@@ -36,32 +36,22 @@ const PokemonDetail = ({ match }) => {
       </Link>
       <div className='detail-wrap' data-testid='pokemon-detail'>
         <div className='detail-meta'>
-          {name && <h2>{name}</h2>}
+          <h2>
+            {name} - {number}
+          </h2>
           {classification && <h3 className='label-dark'>{classification}</h3>}
         </div>
         <div className='detail-image'>
           <img src={image} alt={name} />
         </div>
       </div>
-      <div className='grid-2'>
+      <div className='grid-12'>
         <div className='card detail'>
           <h3 className='label-dark'>Statistics</h3>
           {types && (
             <div>
               <strong className='label-dark'>Type: </strong>
               {formatArrayList(types)}
-            </div>
-          )}
-          {weight && (
-            <div>
-              <strong className='label-dark'>Weight: </strong>
-              {formatMinMaxList(weight)}
-            </div>
-          )}
-          {height && (
-            <div>
-              <strong className='label-dark'>Height: </strong>
-              {formatMinMaxList(height)}
             </div>
           )}
           {resistant && (

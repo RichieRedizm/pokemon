@@ -8,7 +8,9 @@ const PokemonListItem = ({ pokemon: { id, name, image, number } }) => {
       <h3>{name}</h3>
       <Link to={`/pokemon/${id}/${name}`}>
         <button className='btn btn-dark btn-sm'>stats</button>
-        <img src={image} alt='pokemon' />
+        <div className='image-wrap'>
+          <img src={image} alt='pokemon' />
+        </div>
       </Link>
       <strong className='number'>{number}</strong>
     </div>

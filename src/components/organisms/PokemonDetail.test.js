@@ -37,14 +37,7 @@ test('if pokemon data not null generate statistics detail', () => {
     pokemonDetails: jest.fn(),
     pokemon: {
       name: 'Bulbasaur',
-      weight: {
-        minimum: '6.04kg',
-        maximum: '7.76kg'
-      },
-      height: {
-        minimum: '0.61m',
-        maximum: '0.79m'
-      },
+      number: '001',
       classification: 'Seed Pokémon',
       types: ['Grass', 'Poison'],
       resistant: ['Water', 'Electric', 'Grass', 'Fighting', 'Fairy'],

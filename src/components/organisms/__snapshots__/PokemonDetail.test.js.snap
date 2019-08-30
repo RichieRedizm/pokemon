@@ -27,7 +27,7 @@ exports[`if pokemon data not null generate statistics detail 1`] = `
       class="detail-meta"
     >
       <h2>
-        Bulbasaur
+        Bulbasaur - 001
       </h2>
       <h3
         class="label-dark"
@@ -45,7 +45,7 @@ exports[`if pokemon data not null generate statistics detail 1`] = `
     </div>
   </div>
   <div
-    class="grid-2"
+    class="grid-12"
   >
     <div
       class="card detail"
@@ -69,60 +69,6 @@ exports[`if pokemon data not null generate statistics detail 1`] = `
           </span>
           <span>
             Poison
-          </span>
-        </div>
-      </div>
-      <div>
-        <strong
-          class="label-dark"
-        >
-          Weight: 
-        </strong>
-        <div
-          class="detail-object-list"
-        >
-          <span>
-            <strong
-              class="label-light"
-            >
-              Maximum:
-            </strong>
-             7.76kg
-          </span>
-          <span>
-            <strong
-              class="label-light"
-            >
-              Minimum:
-            </strong>
-             6.04kg
-          </span>
-        </div>
-      </div>
-      <div>
-        <strong
-          class="label-dark"
-        >
-          Height: 
-        </strong>
-        <div
-          class="detail-object-list"
-        >
-          <span>
-            <strong
-              class="label-light"
-            >
-              Maximum:
-            </strong>
-             0.79m
-          </span>
-          <span>
-            <strong
-              class="label-light"
-            >
-              Minimum:
-            </strong>
-             0.61m
           </span>
         </div>
       </div>

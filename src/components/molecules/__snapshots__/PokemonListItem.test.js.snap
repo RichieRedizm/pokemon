@@ -3,7 +3,7 @@
 exports[`it displays a pokemon list item 1`] = `
 <DocumentFragment>
   <div
-    class="card text-center"
+    class="card list-item text-center"
     data-testid="pokemon-item-card"
   >
     <h3>
@@ -17,10 +17,14 @@ exports[`it displays a pokemon list item 1`] = `
       >
         stats
       </button>
-      <img
-        alt="pokemon"
-        src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
-      />
+      <div
+        class="image-wrap"
+      >
+        <img
+          alt="pokemon"
+          src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
+        />
+      </div>
     </a>
     <strong
       class="number"
